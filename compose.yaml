@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    image: merchandise-inventory:local
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      PERSISTENCE_TYPE: ${PERSISTENCE_TYPE:-jpa}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
